@@ -1,27 +1,23 @@
-import { Button, InputNumber } from 'antd';
+import { Form, InputNumber } from 'antd';
 import 'antd/dist/antd.css';
-import { useState } from 'react';
 import styles from './app.module.less';
 
 const App: React.FC = () => {
-  const [count, setCount] = useState(0);
-  const [port, setPort] = useState<number | null>(4000);
-
+  const [form] = Form.useForm();
   return (
     <div className={styles.app}>
-      <InputNumber
-        placeholder="4000"
-        value={port}
-        onChange={(e) => setPort(e)}
-      />
-      <div>{count}</div>
-      <Button
-        onClick={() => {
-          setCount((e) => e + 1);
-        }}
+      <Form
+        form={form}
+        initialValues={{ port: 4000 }}
+        name="basic"
+        labelCol={{ span: 4 }}
+        wrapperCol={{ span: 16 }}
+        autoComplete="off"
       >
-        Add
-      </Button>
+        <Form.Item label="Port" name="port">
+          <InputNumber placeholder="4000" />
+        </Form.Item>
+      </Form>
     </div>
   );
 };

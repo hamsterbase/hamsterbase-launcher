@@ -14,10 +14,9 @@
   "engines": {
     "node": "^14.18.0 || >=16.0.0"
   },
-  "dependencies": {
-    "antd": "^4.23.2"
-  },
+  "dependencies": {},
   "devDependencies": {
+    "antd": "^4.23.2",
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
     "@vitejs/plugin-react": "^2.0.1",
